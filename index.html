@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Message Test</title>
+    <link href="index.css" rel="stylesheet " />
+    <script>
+      function sendMessage() {
+        console.log('Preparing message...')
+        let data = {
+					couponId: "KFC123"
+				}
+				window.parent.postMessage({"data": data}, '*');
+        console.log('All done!!')
+      }
+
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Envio de Cupon PostMessage</h1>
+        <div class="container">
+          <button class="btn-send" onclick="sendMessage()"> Enviar </button>
+        </div>
+    </main>
+</body>
+</html>
