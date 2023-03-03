@@ -16,9 +16,20 @@
         console.log('All done!!')
       }
 
+      function getUrlParams() {
+        var objUrlParams = new URLSearchParams(window.location.search);
+        var coupon = objUrlParams.get('couponId')
+        if(coupon) {
+          console.log(coupon);
+          document.body.innerHTML = "<h1>Tu cupon es " + coupon + "<h1>"
+        } else {
+          console.log("No hay cupon")
+        }
+      }
+
     </script>
 </head>
-<body>
+<body onload="getUrlParams()">
     <main>
         <h1>Envio de Cupon PostMessage</h1>
         <div class="container">
